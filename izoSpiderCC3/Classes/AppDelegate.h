@@ -6,6 +6,7 @@
 //  Copyright vkassin 2014. All rights reserved.
 //
 // -----------------------------------------------------------------------
+//
 
 #import "cocos2d.h"
 
