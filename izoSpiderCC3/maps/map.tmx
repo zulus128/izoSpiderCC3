@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="20" height="20" tilewidth="328" tileheight="188">
+ <tileset firstgid="1" name="tiles" tilewidth="328" tileheight="188">
+  <image source="tiles.png" width="328" height="564"/>
+ </tileset>
+ <tileset firstgid="4" name="fence" tilewidth="328" tileheight="300">
+  <image source="fence.png" width="1312" height="316"/>
+ </tileset>
+ <tileset firstgid="8" name="bush" tilewidth="328" tileheight="160">
+  <image source="bush.png" width="328" height="160"/>
+ </tileset>
+ <tileset firstgid="9" name="tree" tilewidth="328" tileheight="370">
+  <image source="tree.png" width="328" height="370"/>
+ </tileset>
+ <layer name="grass" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjZmBgYB7Fo3gUj+JRPIpJxAC2cgSx
+  </data>
+ </layer>
+ <layer name="web" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgx0wEYkHyjxkM/GZT4pZuMxBt4sUt9Ey/LCJk2oeLja1/UsqGArpbxQMDAAAQNYAtw==
+  </data>
+ </layer>
+ <layer name="bushes" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4AywEEEmxIziREfaEANd1Er7EixZxSMAkoAAPOAAEk=
+  </data>
+ </layer>
+ <layer name="trees" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJytVEEKwDAMyrX///DoYTBEE5kRCmMYNW3IqaoDp8h3wX/FQy4COV/eHx9WyzwnP6WrMqtMTk5Wo3y6vhS6e9yCc+9ObaKDeqiZ6OJ7bvWb5npru5lMsPEmzqynegnYjEx9K9+Oq3p2vJ2dOu3Aievs8C7nPQ81BQSc
+  </data>
+ </layer>
+ <layer name="fence1" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgx2wjJo3at6oeaNgEAIAhmAAKQ==
+  </data>
+ </layer>
+ <layer name="fence2" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgx2wEYlHwSgYBaOAngAAFqcAPQ==
+  </data>
+ </layer>
+ <layer name="fence3" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFwwGwjpo3at6oeaOAzgAAn2AAMw==
+  </data>
+ </layer>
+ <layer name="fence4" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjAL6AXYi8SgY/AAAfxwARw==
+  </data>
+ </layer>
+</map>
