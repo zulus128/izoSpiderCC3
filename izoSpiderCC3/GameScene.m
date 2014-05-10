@@ -24,10 +24,11 @@
     self = [super init];
     if (!self) return(nil);
 
-    [Common instance].tileMap.position = ccp(-211, -224);
+//    [Common instance].tileMap.position = ccp(0, 0);
+    [Common instance].tileMap.position = ccp(-411, -424);
 //    [Common instance].tileMap.position = ccp(-1211, -1012);
 
-    [Common instance].tileMap.scale = 0.2f;
+    [Common instance].tileMap.scale = 0.5f;
     [self addChild:[Common instance].tileMap z:0];
     
 	return self;

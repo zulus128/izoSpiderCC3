@@ -8,6 +8,7 @@
 
 #import "Hero.h"
 #import "ShortestPathStep.h"
+#import "CCAnimation.h"
 
 @implementation Hero
 
@@ -16,68 +17,209 @@
     
 	if( (self=[super init]) ) {
 		
+        // --- CALM
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"spider_calm.plist"];
+        
+        NSMutableArray *animationFrames = [NSMutableArray array];
+        for(int i = SPIDER_CALM_MIN_SPRITE_NUMBER; i <= SPIDER_CALM_MAX_SPRITE_NUMBER; ++i)
+        {
+            CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"spider1 (%d).png", i]];
+            [animationFrames addObject:spriteFrame];
+        }
+        CCAnimation *animationCalmS = [CCAnimation animationWithSpriteFrames: animationFrames delay:ANIM_DELAY];
+        CCActionAnimate* aCalmS = [CCActionAnimate actionWithAnimation:animationCalmS];
+        self.actionCalmS = [CCActionRepeatForever actionWithAction:aCalmS];
+        
+        animationFrames = [NSMutableArray array];
+        for(int i = SPIDER_CALM_MIN_SPRITE_NUMBER; i <= SPIDER_CALM_MAX_SPRITE_NUMBER; ++i)
+        {
+            CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"spider2 (%d).png", i]];
+            [animationFrames addObject:spriteFrame];
+        }
+        CCAnimation *animationCalmW = [CCAnimation animationWithSpriteFrames: animationFrames delay:ANIM_DELAY];
+        CCActionAnimate* aCalmW = [CCActionAnimate actionWithAnimation:animationCalmW];
+        self.actionCalmW = [CCActionRepeatForever actionWithAction:aCalmW];
+        
+        animationFrames = [NSMutableArray array];
+        for(int i = SPIDER_CALM_MIN_SPRITE_NUMBER; i <= SPIDER_CALM_MAX_SPRITE_NUMBER; ++i)
+        {
+            CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"spider3 (%d).png", i]];
+            [animationFrames addObject:spriteFrame];
+        }
+        CCAnimation *animationCalmN = [CCAnimation animationWithSpriteFrames: animationFrames delay:ANIM_DELAY];
+        CCActionAnimate* aCalmN = [CCActionAnimate actionWithAnimation:animationCalmN];
+        self.actionCalmN = [CCActionRepeatForever actionWithAction:aCalmN];
+        
+        animationFrames = [NSMutableArray array];
+        for(int i = SPIDER_CALM_MIN_SPRITE_NUMBER; i <= SPIDER_CALM_MAX_SPRITE_NUMBER; ++i)
+        {
+            CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"spider4 (%d).png", i]];
+            [animationFrames addObject:spriteFrame];
+        }
+        CCAnimation *animationCalmE = [CCAnimation animationWithSpriteFrames: animationFrames delay:ANIM_DELAY];
+        CCActionAnimate* aCalmE = [CCActionAnimate actionWithAnimation:animationCalmE];
+        self.actionCalmE = [CCActionRepeatForever actionWithAction:aCalmE];
+        
+        // --- WALK
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"spider_walk_1.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"spider_walk_2.plist"];
+        
+        animationFrames = [NSMutableArray array];
+        for(int i = SPIDER_WALK_MIN_SPRITE_NUMBER; i <= SPIDER_WALK_MAX_SPRITE_NUMBER; ++i)
+        {
+            CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"spider1 (%d).png", i]];
+            [animationFrames addObject:spriteFrame];
+        }
+        CCAnimation *animationWalkS = [CCAnimation animationWithSpriteFrames: animationFrames delay:ANIM_DELAY];
+        CCActionAnimate* aWalkS = [CCActionAnimate actionWithAnimation:animationWalkS];
+        self.actionWalkS = [CCActionRepeatForever actionWithAction:aWalkS];
+        animationFrames = [NSMutableArray array];
+        for(int i = SPIDER_WALK_MIN_SPRITE_NUMBER; i <= SPIDER_WALK_MAX_SPRITE_NUMBER; ++i)
+        {
+            CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"spider2 (%d).png", i]];
+            [animationFrames addObject:spriteFrame];
+        }
+        CCAnimation *animationWalkW = [CCAnimation animationWithSpriteFrames: animationFrames delay:ANIM_DELAY];
+        CCActionAnimate* aWalkW = [CCActionAnimate actionWithAnimation:animationWalkW];
+        self.actionWalkW = [CCActionRepeatForever actionWithAction:aWalkW];
+        animationFrames = [NSMutableArray array];
+        for(int i = SPIDER_WALK_MIN_SPRITE_NUMBER; i <= SPIDER_WALK_MAX_SPRITE_NUMBER; ++i)
+        {
+            CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"spider3 (%d).png", i]];
+            [animationFrames addObject:spriteFrame];
+        }
+        CCAnimation *animationWalkN = [CCAnimation animationWithSpriteFrames: animationFrames delay:ANIM_DELAY];
+        CCActionAnimate* aWalkN = [CCActionAnimate actionWithAnimation:animationWalkN];
+        self.actionWalkN = [CCActionRepeatForever actionWithAction:aWalkN];
+        animationFrames = [NSMutableArray array];
+        for(int i = SPIDER_WALK_MIN_SPRITE_NUMBER; i <= SPIDER_WALK_MAX_SPRITE_NUMBER; ++i)
+        {
+            CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"spider4 (%d).png", i]];
+            [animationFrames addObject:spriteFrame];
+        }
+        CCAnimation *animationWalkE = [CCAnimation animationWithSpriteFrames: animationFrames delay:ANIM_DELAY];
+        CCActionAnimate* aWalkE = [CCActionAnimate actionWithAnimation:animationWalkE];
+        self.actionWalkE = [CCActionRepeatForever actionWithAction:aWalkE];
+
+        // --- WAVE
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"spider_wave.plist"];
+        
+        animationFrames = [NSMutableArray array];
+        for(int i = SPIDER_WAVE_MIN_SPRITE_NUMBER; i <= SPIDER_WAVE_MAX_SPRITE_NUMBER; ++i)
+        {
+            CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"spider1 (%d).png", i]];
+            [animationFrames addObject:spriteFrame];
+        }
+        CCAnimation *animationWaveS = [CCAnimation animationWithSpriteFrames: animationFrames delay:ANIM_DELAY];
+        CCActionAnimate* aWaveS = [CCActionAnimate actionWithAnimation:animationWaveS];
+        self.actionWaveS = [CCActionRepeatForever actionWithAction:aWaveS];
+        animationFrames = [NSMutableArray array];
+        for(int i = SPIDER_WAVE_MIN_SPRITE_NUMBER; i <= SPIDER_WAVE_MAX_SPRITE_NUMBER; ++i)
+        {
+            CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"spider2 (%d).png", i]];
+            [animationFrames addObject:spriteFrame];
+        }
+        CCAnimation *animationWaveW = [CCAnimation animationWithSpriteFrames: animationFrames delay:ANIM_DELAY];
+        CCActionAnimate* aWaveW = [CCActionAnimate actionWithAnimation:animationWaveW];
+        self.actionWaveW = [CCActionRepeatForever actionWithAction:aWaveW];
+        animationFrames = [NSMutableArray array];
+        for(int i = SPIDER_WAVE_MIN_SPRITE_NUMBER; i <= SPIDER_WAVE_MAX_SPRITE_NUMBER; ++i)
+        {
+            CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"spider3 (%d).png", i]];
+            [animationFrames addObject:spriteFrame];
+        }
+        CCAnimation *animationWaveN = [CCAnimation animationWithSpriteFrames: animationFrames delay:ANIM_DELAY];
+        CCActionAnimate* aWaveN = [CCActionAnimate actionWithAnimation:animationWaveN];
+        self.actionWaveN = [CCActionRepeatForever actionWithAction:aWaveN];
+        animationFrames = [NSMutableArray array];
+        for(int i = SPIDER_WAVE_MIN_SPRITE_NUMBER; i <= SPIDER_WAVE_MAX_SPRITE_NUMBER; ++i)
+        {
+            CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"spider4 (%d).png", i]];
+            [animationFrames addObject:spriteFrame];
+        }
+        CCAnimation *animationWaveE = [CCAnimation animationWithSpriteFrames: animationFrames delay:ANIM_DELAY];
+        CCActionAnimate* aWaveE = [CCActionAnimate actionWithAnimation:animationWaveE];
+        self.actionWaveE = [CCActionRepeatForever actionWithAction:aWaveE];
+        
         me = [CCSprite spriteWithImageNamed:@"spider1 (1).png"];
         me.position = ccp(0,0);
         [self addChild:me];
         
         direction = kDirS;
+        state = kSpiderStateCalm;
         
-//        [self refreshAnimation];
+        [self refreshAnimation];
         
 	}
 	return self;
 }
 
-- (void) refreshAnimation {
-    
+- (void) refreshAnimation
+{
     [me stopAllActions];
     
-    NSString* act = @"calm";
-    int cnt = 10;
-    if(self.shortestPath != nil) {
-
-        act = @"walk";
-        cnt = 14;
+    state = kSpiderStateCalm;
+    
+    if(self.shortestPath != nil)
+    {
+        state = kSpiderStateWalk;
     }
     
-    NSString* dir = @"w";
-    BOOL reflectX = NO;
-//    BOOL reflectY = NO;
-    switch (direction) {
-        case kDirW:
-            dir = @"w";
-            reflectX = NO;
-//            reflectY = NO;
+    CCAction* act;
+    switch (state) {
+        case kSpiderStateCalm:
+            switch (direction) {
+                case kDirS:
+                    act = self.actionCalmS;
+                    break;
+                case kDirW:
+                    act = self.actionCalmW;
+                    break;
+                case kDirN:
+                    act = self.actionCalmN;
+                    break;
+                case kDirE:
+                    act = self.actionCalmE;
+                    break;
+            }
             break;
-        case kDirN:
-            dir = @"w";
-            reflectX = YES;
-//            reflectY = NO;
+            
+        case kSpiderStateWalk:
+            switch (direction) {
+                case kDirS:
+                    act = self.actionWalkS;
+                    break;
+                case kDirW:
+                    act = self.actionWalkW;
+                    break;
+                case kDirN:
+                    act = self.actionWalkN;
+                    break;
+                case kDirE:
+                    act = self.actionWalkE;
+                    break;
+            }
             break;
-        case kDirE:
-            dir = @"s";
-            reflectX = YES;
-//            reflectY = NO;
-            break;
-        case kDirS:
-            dir = @"s";
-            reflectX = NO;
-//            reflectY = NO;
+            
+        case kSpiderStateWave:
+            switch (direction) {
+                case kDirS:
+                    act = self.actionWaveS;
+                    break;
+                case kDirW:
+                    act = self.actionWaveW;
+                    break;
+                case kDirN:
+                    act = self.actionWaveN;
+                    break;
+                case kDirE:
+                    act = self.actionWaveE;
+                    break;
+            }
             break;
     }
     
-    CCAnimation* anim = [CCAnimation animation];
-    for (int i = 1; i <= cnt; i++) {
-
-        [anim addSpriteFrameWithFilename:[NSString stringWithFormat:@"spider_%@_%@ (%d).png", act, dir, i]];
-    }
-    anim.delayPerUnit = ANIM_DELAY;
-    CCAnimate *animate = [CCAnimate actionWithAnimation:anim];
-    [me runAction:[CCRepeatForever actionWithAction:animate]];
-    CCFlipX *flipOnX = [CCFlipX actionWithFlipX:reflectX];
-    [me runAction:flipOnX];
-//    CCFlipX *flipOnY = [CCFlipX actionWithFlipX:reflectY];
-//    [me runAction:flipOnY];
+    [me runAction:act];
 }
 //
 //- (void) go {

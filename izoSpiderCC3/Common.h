@@ -7,6 +7,7 @@
 //
 
 //http://www.raywenderlich.com/4970/how-to-implement-a-pathfinding-with-cocos2d-tutorial
+//http://spritepacker.kernys.net/
 
 #import "cocos2d.h"
 
@@ -27,6 +28,13 @@ enum {
     kDirN,
     kDirE,
     kDirS
+};
+
+enum {
+    
+    kSpiderStateCalm,
+    kSpiderStateWave,
+    kSpiderStateWalk
 };
 
 @class Hero;
